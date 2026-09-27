@@ -1,4 +1,4 @@
-[![Run Tests](https://github.com/carolina-alp/mi-proyecto-geoespacial/actions/workflows/tests.yml/badge.svg)](https://github.com/carolina-alp/mi-proyecto-geoespacial/actions/workflows/tests.yml)
+[![Run Tests](https://github.com/carolina-alp/geospatial-lookup-api/actions/workflows/tests.yml/badge.svg)](https://github.com/carolina-alp/geospatial-lookup-api/actions/workflows/tests.yml)
 
 # Geospatial API - Nearby Pharmacies
 
