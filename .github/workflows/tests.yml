@@ -56,6 +56,16 @@ jobs:
           EOF
           psql -h localhost -U postgres -f seed.sql
 
+      - name: Install GDAL
+        run: sudo apt-get update && sudo apt-get install -y gdal-bin
+
+      - name: Load real city boundaries
+        run: |
+          ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres password=secreto123" cochabamba_boundary.geojson -nln zones_osm -nlt PROMOTE_TO_MULTI
+          ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres password=secreto123" -append leuven_boundary.geojson -nln zones_osm -nlt PROMOTE_TO_MULTI
+
+
+
       - name: Run tests
         env:
           POSTGRES_PASSWORD: secreto123

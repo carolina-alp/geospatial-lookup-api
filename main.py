@@ -38,8 +38,8 @@ def locate_zone(lat: float, lon: float):
     cur = conn.cursor()
     cur.execute("""
         SELECT name
-        FROM zones
-        WHERE ST_Contains(boundary::geometry, ST_SetSRID(ST_MakePoint(%s, %s), 4326));
+        FROM zones_osm
+        WHERE ST_Contains(wkb_geometry, ST_SetSRID(ST_MakePoint(%s, %s), 4326));
     """, (lon, lat))
     result = cur.fetchone()
     cur.close()

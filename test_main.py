@@ -17,10 +17,10 @@ def test_pharmacies_nearby_empty_far_away():
     data = response.json()
     assert data == []
 
-def test_locate_zone_returns_zone_north():
-    response = client.get("/zones/locate?lat=-17.3900&lon=-66.1550")
+def test_locate_zone_returns_cochabamba():
+    response = client.get("/zones/locate?lat=-17.3935&lon=-66.1570")
     data = response.json()
-    assert data["zone"] == "Zone North"
+    assert data["zone"] == "Cochabamba"
 
 def test_locate_zone_outside_any_zone():
     response = client.get("/zones/locate?lat=0&lon=0")
